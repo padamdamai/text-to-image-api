@@ -47,23 +47,24 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <h1 className='bg-green-400'>Text to Image Generator</h1>
+    <div className="app w-[75%] flex flex-col justify-center items-center">
+      <h1 className='text-white m-4 text-4xl font-bold p-2'>Text to Image Generator</h1>
 
       <input
+      className='p-3 sm:w-[50%] rounded-md md:w-[75%]'
         type="text"
         value={textInput}
         onChange={(e) => setTextInput(e.target.value)}
         placeholder="Enter text to generate an image"
       />
       <br />
-      <button className="btn" onClick={fetchImage}>Generate Image</button>
+      <button className="btn bg-blue-950 text-white p-3 text-2xl rounded-md" onClick={fetchImage}>Generate Image</button>
       <br />
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
       {loading ? ( 
-        <div>
+        <div className='mt-11'>
           <img src="loading.gif" alt="loading" />
           <p>Loading...</p>
         </div>
